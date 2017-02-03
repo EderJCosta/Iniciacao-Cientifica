@@ -1,0 +1,5 @@
+biblioteca\controller\DefaultController.class
+biblioteca\model\Book.class
+biblioteca\controller\book\BookController.class
+biblioteca\interceptor\Interceptor.class
+biblioteca\mock\BookMock.class

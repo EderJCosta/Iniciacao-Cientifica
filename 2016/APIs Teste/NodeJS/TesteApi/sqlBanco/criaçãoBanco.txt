@@ -1,0 +1,33 @@
+﻿create table autor(
+	id BIGSERIAL not null unique,
+	nome varchar(255) unique not null,
+	idade int not null,
+	primary key(id)
+);
+create table livro(
+	id BIGSERIAL not null unique,
+	nome varchar(255),
+	autor_fk int,
+	categoria_fk int,
+	primary key(id,autor_fk,categoria_fk)
+);
+create table categoria(
+	id BIGSERIAL not null unique,
+	nome varchar(255),
+	primary key(id)
+);
+alter table livro add constraint autor_livro_fk foreign key (autor_fk) references autor(id);
+alter table livro add constraint categoria_livro_fk foreign key (categoria_fk) references categoria(id);
+
+INSERT INTO public.autor(nome, idade) VALUES ('Autor 1', '39');
+INSERT INTO public.autor(nome, idade) VALUES ('Autor 2', '53');
+INSERT INTO public.autor(nome, idade) VALUES ('Autor 3', '23');
+
+INSERT INTO public.categoria(nome) VALUES ('Ação');
+INSERT INTO public.categoria(nome) VALUES ('Romance');
+INSERT INTO public.categoria(nome) VALUES ('Suspense');
+
+
+INSERT INTO public.livro( nome, autor_fk, categoria_fk) VALUES ('Livro 1', '1', '1');
+INSERT INTO public.livro( nome, autor_fk, categoria_fk) VALUES ('Livro 2', '2', '2');
+INSERT INTO public.livro( nome, autor_fk, categoria_fk) VALUES ('Livro 3', '3', '3');

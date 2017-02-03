@@ -1,0 +1,36 @@
+<html>
+
+  <head>
+    <title>Angular 2 - Template</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- 1. Carregam as bibliotecas da aplicação -->
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+
+    <!-- 2. Configura o SystemJS, que é responsável por carregar os arquivos js assincronamente -->
+    <script>
+      System.config({
+        packages: {        
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+      System.import('app/boot').then(null, console.error.bind(console));
+    </script>
+
+  </head>
+
+  <!-- 3. Exibe a aplicação -->
+  <body>
+    <div class="container">
+      <meu-app>Carregando...</meu-app>
+    </div>
+  </body>
+  
+</html>

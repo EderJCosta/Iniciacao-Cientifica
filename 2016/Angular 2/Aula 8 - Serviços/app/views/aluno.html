@@ -1,0 +1,48 @@
+<h1>Alunos</h1>
+
+<div class="well">
+    <form>
+        <div class="form-group">
+            <label class="control-label" for="nome">Nome</label>
+            <input type="text" class="form-control" name="nome" 
+                id="nome" [(ngModel)]="aluno.nome">
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="email">Email</label>
+            <input type="email" class="form-control" name="email" 
+                id="email" [(ngModel)]="aluno.email">
+        </div>
+        <div class="form-group text-center">
+            <button class="btn btn-success" *ngIf="idEditar<0"
+                (click)="cadastrar()">
+                Cadastrar
+            </button>
+            <button class="btn btn-success" *ngIf="idEditar>=0"
+                (click)="atualizar()">
+                Atualizar
+            </button>
+        </div>
+    </form>
+</div>
+
+<div>
+    <table class="table table-striped">
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>&nbsp;</th>
+        </tr>
+        <tr *ngFor="#aluno of alunos; #id=index">
+            <td>{{ aluno.nome }}</td>
+            <td>{{ aluno.email }}</td>
+            <td>
+                <button class="btn btn-info" (click)="editar(id)">
+                    Editar
+                </button>
+                <button class="btn btn-danger" (click)="excluir(id)">
+                    Excluir
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,4 @@
+Para o carregamento dos dados da lista:
+1 - acessa a pasta backend pelo cmd ou terminal
+2 - execute o comando "node contatosBackend.js"
+3 - abra o arquivo index na pasta raiz

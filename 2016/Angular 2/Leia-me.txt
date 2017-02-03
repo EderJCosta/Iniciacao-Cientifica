@@ -1,0 +1,4 @@
+para rodar as aplicações:
+1 - abra o diretorio da aplicação com o cmd ou terminal.
+2 - execute o comando "npm install" e aguarde a instalação das dependencias...
+3 - execute o comando "npm start"

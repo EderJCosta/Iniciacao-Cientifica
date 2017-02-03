@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-2 col-sm-6 col-xs-12 sidebarNav">
+        <div class="container-fluid">
+            <ul class="nav nav-pills nav-stacked">
+                <li role="presentation"><a routerLink="/home">Home</a></li>
+                <li class="active" role="presentation"><a routerLink="/book/create">Adicionar Livros</a></li>
+                <li role="presentation"><a routerLink="/book/list">Listar Livros</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-10 col-sm-6 col-xs-12">
+        <div class="container padding">
+            <form (ngSubmit)="submit()">
+                <div class="form-group">
+                    <label for="name">Nome do Livro</label>
+                    <input [(ngModel)]="theBook.name" name="name" type="text" class="form-control" id="name" placeholder="Nome" value="{{theBook.name}}">
+                </div>
+                <div class="form-group">
+                    <label for="author">Autor</label>
+                    <input [(ngModel)]="theBook.author" name="author" type="text" class="form-control" id="author" placeholder="Password" value="{{theBook.author}}">
+                </div>
+                <div class="form-group">
+                    <label for="description">descrição</label>
+                    <input [(ngModel)]="theBook.description" name="description" type="text" class="form-control" id="description" placeholder="Password" value="{{theBook.description}}">
+                </div>
+                <button type="submit" class="btn btn-primary">Editar</button>
+            </form>
+        </div>
+        {{diagnostic}}
+    </div>
+</div>

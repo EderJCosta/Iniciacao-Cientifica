@@ -1,0 +1,68 @@
+<nav class="navbar-inverse navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+        aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a *ngIf="userLogged == undefined " class="navbar-brand"  routerLink="/">Biblioteca</a>
+      <a *ngIf="userLogged != undefined " class="navbar-brand"  routerLink="/home">Biblioteca</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div *ngIf="userLogged == undefined ">
+        <ul class="nav navbar-nav">
+          <li class="active"><a routerLink="/">Home <span class="sr-only">(current)</span></a></li>
+          <li><a routerLink="/about">Sobre</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="btn" data-toggle="modal" data-target="#modalLogin">Login</a></li>
+          <li><a routerLink="/register">Cadastrar</a></li>
+        </ul>
+      </div>
+      <div *ngIf="userLogged != undefined">
+        <ul class="nav navbar-nav">
+          <li class="active"><a routerLink="/home">Home <span class="sr-only">(current)</span></a></li>
+          <li><a routerLink="/about">Sobre</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a>{{userLogged}}</a></li>
+          <li><a class="btn" (click)="logout()">Sair</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+
+<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="modalLoginLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="modalLoginLabel">Fazer Login</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input [(ngModel)]="user.name" name="name" type="text" class="form-control" id="name" placeholder="Nome">
+        </div>
+        <div class="form-group">
+          <label for="password">Senha</label>
+          <input [(ngModel)]="user.password" name="password" type="password" class="form-control" id="password" placeholder="Password">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button (click)="singIn(user)" data-dismiss="modal" type="button" class="btn btn-primary">Entrar</button>
+      </div>
+    </div>
+  </div>
+</div>
