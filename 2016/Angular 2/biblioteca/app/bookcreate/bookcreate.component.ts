@@ -2,7 +2,7 @@ import { BOOKS } from '../mock/book.mock';
 import { BookService } from '../services/book.service';
 import { Component } from '@angular/core';
 
-import { Book } from '../models/Book';
+import { Book } from '../models/book';
 
 @Component({
   selector: 'my-app',

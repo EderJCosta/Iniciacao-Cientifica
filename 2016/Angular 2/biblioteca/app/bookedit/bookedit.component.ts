@@ -6,7 +6,7 @@ import { BookService } from '../services/book.service';
 import { Component, Input, OnInit } from '@angular/core';
 import 'rxjs/add/operator/switchMap';
 
-import { Book } from '../models/Book';
+import { Book } from '../models/book';
 
 @Component({
     moduleId: module.id,

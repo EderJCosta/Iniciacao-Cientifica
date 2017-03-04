@@ -1,8 +1,8 @@
-import { UserService } from '../services/User.Service';
+import { UserService } from '../services/user.service';
 import { Component } from '@angular/core';
 import {OnInit} from '@angular/core';
 
-import { User } from '../models/User';
+import { User } from '../models/user';
 
 @Component({
   selector: 'my-app',
@@ -13,8 +13,8 @@ export class RegisterComponent  {
   constructor(private userService: UserService) { }
   private users: User[]=[];
   success: boolean = false
-  user = new User("","");  
-  
+  user = new User("","");
+
   submit(): void{
     this.success = true;
     this.userService.create(this.user);

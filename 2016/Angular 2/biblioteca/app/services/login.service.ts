@@ -1,7 +1,7 @@
 import { userInfo } from 'os';
 import { Router } from '@angular/router';
-import { USERS } from '../mock/Users.mock';
-import { User } from '../models/User';
+import { USERS } from '../mock/users.mock';
+import { User } from '../models/user';
 import { Injectable } from '@angular/core';
 
 @Injectable()

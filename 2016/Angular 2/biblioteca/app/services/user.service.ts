@@ -2,12 +2,12 @@ import { Router } from '@angular/router';
 import { Jsonp } from '@angular/http';
 import { create } from 'domain';
 import { Injectable } from '@angular/core';
-import { User } from '../models/User';
-import { USERS } from '../mock/Users.mock';
+import { User } from '../models/user';
+import { USERS } from '../mock/users.mock';
 
 @Injectable()
 export class UserService {
-    
+
     get(): User[] {
         return USERS
     }

@@ -1,6 +1,6 @@
 import { isNull } from 'util';
 import { LoginService } from '../services/login.service';
-import { User } from '../models/User';
+import { User } from '../models/user';
 import { Component } from '@angular/core';
 
 @Component({
@@ -20,7 +20,7 @@ export class NavBarComponent {
   logout(): void{
     this.userLogged= undefined
     this.loginService.logout()
-    
+
   }
 
 }
